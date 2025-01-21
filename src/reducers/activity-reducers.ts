@@ -5,7 +5,8 @@ import { Activity } from "../types";
 export type ActivityActions =
     { type: 'save-activity', payload: { newActivity: Activity } } |
     { type: 'set-activeId', payload: { id: Activity['id'] } } |
-    { type: 'delete-activity', payload: { id: Activity['id'] } }
+    { type: 'delete-activity', payload: { id: Activity['id'] } } |
+    { type: 'resert-app' }
 
 export type ActivityState = {
     activities: Activity[],
@@ -54,6 +55,13 @@ export const activityReducer = (
         return {
             ...state,
             activities: state.activities.filter(activity => activity.id !== action.payload.id)
+        }
+    }
+
+    if (action.type === 'resert-app') {
+        return {
+            activities: [],
+            activeId: ''
         }
     }
 
