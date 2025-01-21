@@ -108,7 +108,7 @@ export default function Form({ dispatch, state }: FormProps) {
 
             <input
                 type="submit"
-                className="bg-gray-800 hover:bg-gray-900 w-full p-2 font-bold uppercase text-white cursor-pointer disabled:opacity-20"
+                className="bg-teal-600 hover:bg-teal-800 w-full p-2 font-bold uppercase text-white cursor-pointer disabled:opacity-20"
                 // Validacion de boton "Guardar"
                 value={activity.category === 1 ? 'Guardar Comida' : 'Guardar Ejercicio'}
                 disabled={!isValidActivity()}
