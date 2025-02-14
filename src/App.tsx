@@ -1,13 +1,12 @@
-import { useReducer, useEffect, useMemo } from "react"
+import { useEffect, useMemo } from "react"
 import Form from "./components/Form"
-import { activityReducer, initialState } from "./reducers/activity-reducers"
 import ActivityList from "./components/ActivityList"
 import CalorieTracker from "./components/CalorieTracker"
-
+import { useActivity } from "./hooks/useActivity"
 
 function App() {
 
-  const [state, dispatch] = useReducer(activityReducer, initialState)
+  const { state, dispatch } = useActivity()
 
   // Local Storage
   useEffect(() => {
